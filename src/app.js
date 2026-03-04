@@ -41,7 +41,7 @@ app.get("/health", async (req, res) => {
   }
 });
 
-// Global Error Handler
+// global Error Handler
 app.use(errorHandler);
 
 export default app;
