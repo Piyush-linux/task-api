@@ -5,8 +5,6 @@ Users can register, log in, and create or manage their personal tasks through au
 
 The project was created to demonstrate backend development concepts such as authentication, database interaction, API design, and basic security practices.
 
----
-
 ## Tech Stack
 
 * Node.js
@@ -15,8 +13,6 @@ The project was created to demonstrate backend development concepts such as auth
 * JWT for authentication
 * bcrypt for password hashing
 * Zod for request validation
-
----
 
 ## Features
 
@@ -27,8 +23,6 @@ The project was created to demonstrate backend development concepts such as auth
 * Security headers using Helmet
 * Centralized error handling
 
----
-
 ## Getting Started
 
 Clone the repository:
@@ -36,6 +30,23 @@ Clone the repository:
 ```bash
 git clone https://github.com/YOUR_USERNAME/task-management-api.git
 cd task-management-api
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory and add the following:
+
+```env
+NODE_ENV=development
+PORT=5000
+
+DB_HOST=db
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=taskdb
+# openssl rand -hex 32
+JWT_SECRET=0044168740a272a7ac27041740921a6fcd391fc4348311bbb2da9b9c049996bb
 ```
 
 Install dependencies:
@@ -50,11 +61,7 @@ Start the server:
 npm run dev
 ```
 
-The API will run on:
 
-```
-http://localhost:3000
-```
 
 ## Docker 
 ```sh
@@ -65,8 +72,11 @@ docker compose down -v
 docker ps
 ```
 
----
+The API will run on:
 
+```
+http://localhost:3000
+```
 
 # File Structure 
 
@@ -99,23 +109,7 @@ task-api
        └ errorHandler.js
 ```
 
----
 
-## Environment Variables
-
-Create a `.env` file in the root directory and add the following:
-
-```
-PORT=3000
-
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=taskuser
-DB_PASSWORD=password
-DB_NAME=task_manager
-
-JWT_SECRET=your-secret-key
-```
 
 
 ## API Endpoints
