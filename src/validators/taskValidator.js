@@ -6,6 +6,4 @@ export const taskSchema = z.object({
   description: z.string().optional(),
 
   status: z.enum(["pending", "in_progress", "completed"]).optional(),
-
-  dueDate: z.string().optional(),
 });

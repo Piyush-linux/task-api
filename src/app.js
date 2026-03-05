@@ -29,8 +29,11 @@ app.use(apiLimiter);
 app.get("/", (req, res) => {
   res.send("API running");
 });
-app.use("/auth", auth);
-app.use("/tasks", tasks);
+// app.use("/auth", auth);
+// app.use("/tasks", tasks);
+
+app.use("/api/v1/auth", auth);
+app.use("/api/v1/tasks", tasks);
 
 app.get("/health", async (req, res) => {
   try {
@@ -40,7 +43,14 @@ app.get("/health", async (req, res) => {
     res.status(500).json({ status: "db_error" });
   }
 });
-
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    error: "Route not found",
+    path: req.originalUrl,
+  });
+});
 // global Error Handler
 app.use(errorHandler);
 
