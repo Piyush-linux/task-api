@@ -5,7 +5,7 @@ import "dotenv/config";
 import app from "./src/app.js";
 const PORT = 3000;
 const numCPUs = os.cpus().length;
-const workers = 1; // Math.max(1, Math.floor(numCPUs - 2));
+const workers = Math.max(1, Math.floor(numCPUs / 2));
 
 if (cluster.isPrimary) {
   console.log(`Primary process ${process.pid} running`);

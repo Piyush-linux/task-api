@@ -72,11 +72,19 @@ docker compose down -v
 docker ps
 ```
 
-The API will run on:
+*The API will run on:*
 
-```
+```sh
 http://localhost:3000
+http://localhost:3000/api-docs/
 ```
+
+# Schema
+![](/schema.png)
+
+# Architecture
+![](/architecture.png)
+
 
 # File Structure 
 
