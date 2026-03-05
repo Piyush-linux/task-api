@@ -124,3 +124,8 @@ task_manager=# GRANT ALL PRIVILEGES ON SEQUENCE tasks_id_seq TO taskuser;
 GRANT
 task_manager=#
 ```
+
+
+```
+docker compose restart api
+```

@@ -87,7 +87,7 @@ export const updateTask = async (req, res) => {
          description=$2,
          status=$3,
          updated_at=NOW()
-     WHERE id=$5 AND user_id=$6
+     WHERE id=$4 AND user_id=$5
      RETURNING *`,
     [title, description, status, taskId, userId],
   );

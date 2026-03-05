@@ -8,6 +8,8 @@ import tasks from "./routes/tasks.js";
 import cors from "cors";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger.js";
 
 const app = express();
 
@@ -25,6 +27,7 @@ app.use(express.json({ limit: "10kb" })); // protects server from large payload 
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(morgan("dev"));
 app.use(apiLimiter);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get("/", (req, res) => {
   res.send("API running");
